@@ -18,3 +18,4 @@ This is a simple personal portfolio website built using HTML.
 
 ## Note
 This project was developed using a mobile phone and assisted by AI tools for learning and improvement.
+- Added CSS styling for layout and design
