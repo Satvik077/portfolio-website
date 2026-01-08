@@ -1,101 +1,212 @@
-<!DOCTYPE html>
+
+   <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Satvik Chaurasia | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Satvik Chaurasia | Software Developer</title>
+  <meta name="description" content="Satvik Chaurasia portfolio — BCA student, aspiring software developer skilled in C, C++, Python, HTML, CSS, and JavaScript.">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --bg: #0f172a;
+      --card: rgba(255, 255, 255, 0.08);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --blur: blur(14px);
+    }
+
+    * {
       margin: 0;
-      background-color: #f4f6f8;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
     header {
-      background: #1f2933;
-      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 30px 10px;
+      padding: 2rem;
+    }
+
+    .hero {
+      max-width: 700px;
+      animation: fadeUp 1.2s ease forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700;
+    }
+
+    .hero span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 1.1rem;
     }
 
     section {
-      background: white;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 8px;
+      padding: 4rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: var(--blur);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
     }
 
     h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      background: #e5e7eb;
+    .skills span {
       display: inline-block;
-      margin: 5px;
-      padding: 8px 12px;
-      border-radius: 5px;
+      background: rgba(255,255,255,0.12);
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      margin: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .projects .card {
+      cursor: pointer;
     }
 
     footer {
       text-align: center;
-      padding: 15px;
-      color: #666;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Scroll animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Satvik Chaurasia</h1>
-  <p>BCA Student | Aspiring Software Developer</p>
+  <div class="hero">
+    <h1>Hi, I’m <span>Satvik Chaurasia</span></h1>
+    <p>BCA Student • Aspiring Software Developer • Building real-world skills</p>
+  </div>
 </header>
 
-<section>
+<section class="reveal">
   <h2>About Me</h2>
-  <p>
-    I am a BCA second-year student learning programming and web development.
-    I am building projects to gain practical experience and apply for internships.
-  </p>
+  <div class="card">
+    I’m a second-year BCA student focused on learning software development by building clean,
+    practical projects. I’m currently strengthening my foundations in programming and web technologies
+    to prepare for internships and entry-level roles.
+  </div>
 </section>
 
-<section>
+<section class="reveal skills">
   <h2>Skills</h2>
-  <ul>
-    <li>C</li>
-    <li>C++</li>
-    <li>Python (Basics)</li>
-    <li>HTML</li>
-    <li>CSS</li>
-  </ul>
+  <div class="card">
+    <span>C</span>
+    <span>C++</span>
+    <span>Python (Basics)</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+  </div>
 </section>
 
-<section>
+<section class="reveal projects">
   <h2>Projects</h2>
-  <ul>
-    <li>Personal Portfolio Website</li>
-    <li>Python Logic Programs</li>
-  </ul>
+
+  <div class="card">
+    <strong>Personal Portfolio Website</strong>
+    <p>A responsive, modern portfolio built using HTML, CSS, and JavaScript.</p>
+  </div>
+
+  <div class="card">
+    <strong>Python Logic Programs</strong>
+    <p>Collection of beginner-friendly Python programs focusing on logic building.</p>
+  </div>
 </section>
 
-<section>
+<section class="reveal">
   <h2>Contact</h2>
-  <p>Email: krishchaurasia290@gmail.com</p>
-  <p>LinkedIn: linkedin.com/in/satvik-chaurasia-b280922bb</p>
+  <div class="card">
+    <p>Email: krishchaurasia290@gmail.com</p>
+    <p>LinkedIn: linkedin.com/in/satvik-chaurasia-b280922bb</p>
+  </div>
 </section>
 
 <footer>
   © 2026 Satvik Chaurasia
 </footer>
 
+<script>
+  // Scroll reveal effect (used by professionals)
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+    reveals.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 80) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
 </body>
-</html>
+</html> 
