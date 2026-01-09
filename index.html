@@ -188,24 +188,47 @@
   border: 1px solid rgba(255,255,255,0.2);
 }
   </style>
+   h1 {
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.scroll {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  opacity: 0.8;
+  animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
 </head>
 <body>
 
 <header>
-  <div class="hero">
-    <div class="glow"></div>
+  <div class="glow"></div>
 
-    <h1>Hi, I’m <span>Satvik Chaurasia</span></h1>
+  <h1>
+    Hi, I’m <span class="accent">Satvik</span><br />
+    <span class="accent">Chaurasia</span>
+  </h1>
 
-    <p class="typing">
-      <span id="type"></span>
-    </p>
+  <p class="typing" id="typing"></p>
 
-    <div class="cta">
-      <a href="#projects">View Projects</a>
-      <a href="#contact" class="secondary">Contact Me</a>
-    </div>
+  <div class="cta">
+    <a href="#projects">View Projects</a>
+    <a href="#contact" class="secondary">Contact Me</a>
   </div>
+
+  <div class="scroll">↓ Scroll</div>
 </header>
 
 <section class="reveal">
@@ -272,6 +295,42 @@
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll();
 </script>
+<script>
+  const roles = [
+    "BCA Student • Aspiring Software Developer",
+    "Building real-world web projects",
+    "Learning JavaScript • HTML • CSS",
+    "Focused on internships & growth"
+  ];
 
+  let i = 0;
+  let j = 0;
+  let current = "";
+  let deleting = false;
+  const speed = 80;
+  const target = document.getElementById("typing");
+
+  function type() {
+    if (!target) return;
+
+    if (!deleting && j <= roles[i].length) {
+      current = roles[i].slice(0, j++);
+    } else if (deleting && j >= 0) {
+      current = roles[i].slice(0, j--);
+    }
+
+    target.textContent = current;
+
+    if (j === roles[i].length + 8) deleting = true;
+    if (deleting && j === 0) {
+      deleting = false;
+      i = (i + 1) % roles.length;
+    }
+
+    setTimeout(type, deleting ? speed / 2 : speed);
+  }
+
+  type();
+</script>
 </body>
 </html> 
