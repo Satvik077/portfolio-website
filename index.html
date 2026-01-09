@@ -1,37 +1,19 @@
-
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Satvik Chaurasia | Software Developer</title>
-  <meta name="description" content="Satvik Chaurasia portfolio — BCA student, aspiring software developer skilled in C, C++, Python, HTML, CSS, and JavaScript.">
+  <meta name="description" content="Satvik Chaurasia portfolio — BCA student and aspiring software developer." />
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-     .tech-stack {
-  margin-top: 2.5rem;
-  display: flex;
-  gap: 0.6rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.tech-stack span {
-  padding: 0.4rem 0.9rem;
-  font-size: 0.75rem;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  color: var(--text);
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: var(--blur);
-}
     :root {
-      --bg: #0f172a;
-      --card: rgba(255, 255, 255, 0.08);
+      --bg: #020617;
+      --card: rgba(255,255,255,0.08);
       --text: #e5e7eb;
       --muted: #94a3b8;
       --accent: #38bdf8;
@@ -46,11 +28,13 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #1e293b, #020617);
+      background: radial-gradient(circle at top, #1e293b, var(--bg));
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
+
+    /* ================= HEADER ================= */
 
     header {
       min-height: 100vh;
@@ -58,33 +42,123 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      position: relative;
+      overflow: hidden;
       padding: 2rem;
     }
 
+    .glow {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, var(--accent), transparent 60%);
+      filter: blur(90px);
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.6;
+      z-index: -1;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, 25px); }
+    }
+
     .hero {
-      max-width: 700px;
+      max-width: 720px;
       animation: fadeUp 1.2s ease forwards;
     }
 
-    .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.2rem);
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
       font-weight: 700;
+      line-height: 1.2;
     }
 
-    .hero span {
+    .accent {
       color: var(--accent);
     }
 
-    .hero p {
-      margin-top: 1rem;
-      color: var(--muted);
+    .typing {
+      margin-top: 1.2rem;
       font-size: 1.1rem;
+      color: var(--muted);
+      min-height: 1.4em;
     }
 
+    .cta {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta a {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      background: var(--accent);
+      color: #020617;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(56,189,248,0.4);
+    }
+
+    .cta .secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .tech-stack {
+      margin-top: 2rem;
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .tech-stack span {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: var(--blur);
+    }
+
+    .scroll {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      opacity: 0.8;
+      animation: bounce 1.8s infinite;
+    }
+
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ================= SECTIONS ================= */
+
     section {
-      padding: 4rem 1.5rem;
       max-width: 1000px;
       margin: auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
 
     .card {
@@ -92,8 +166,7 @@
       backdrop-filter: var(--blur);
       border-radius: 16px;
       padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -102,32 +175,24 @@
       box-shadow: 0 10px 40px rgba(0,0,0,0.4);
     }
 
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
     .skills span {
       display: inline-block;
-      background: rgba(255,255,255,0.12);
+      margin: 0.3rem;
       padding: 0.4rem 0.8rem;
       border-radius: 999px;
-      margin: 0.3rem;
+      background: rgba(255,255,255,0.12);
       font-size: 0.9rem;
-    }
-
-    .projects .card {
-      cursor: pointer;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
+      font-size: 0.85rem;
       color: var(--muted);
-      font-size: 0.9rem;
     }
 
-    /* Scroll animation */
+    /* ================= ANIMATIONS ================= */
+
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -140,127 +205,45 @@
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-     .glow {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, var(--accent), transparent 60%);
-  filter: blur(80px);
-  top: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.6;
-  animation: float 6s ease-in-out infinite;
-  z-index: -1;
-}
-
-@keyframes float {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, 20px); }
-}
-
-.typing {
-  margin-top: 1.2rem;
-  font-size: 1.1rem;
-  color: var(--muted);
-  min-height: 1.4em;
-}
-
-.cta {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.cta a {
-  padding: 0.7rem 1.4rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  background: var(--accent);
-  color: #020617;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cta a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(56,189,248,0.4);
-}
-
-.cta .secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid rgba(255,255,255,0.2);
-}
-  
-   h1 {
-  font-size: clamp(2.2rem, 6vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.accent {
-  color: var(--accent);
-}
-
-.scroll {
-  margin-top: 3rem;
-  font-size: 0.8rem;
-  color: var(--muted);
-  opacity: 0.8;
-  animation: bounce 1.8s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-}
-     </style>
+  </style>
 </head>
 <body>
 
 <header>
-   <div class="tech-stack">
-  <span>HTML</span>
-  <span>CSS</span>
-  <span>JavaScript</span>
-  <span>GitHub Pages</span>
-   </div>
   <div class="glow"></div>
 
-  <h1>
-    Hi, I’m <span class="accent">Satvik</span><br />
-    <span class="accent">Chaurasia</span>
-  </h1>
+  <div class="hero">
+    <h1>
+      Hi, I’m <span class="accent">Satvik</span><br />
+      <span class="accent">Chaurasia</span>
+    </h1>
 
-  <p class="typing" id="typing"></p>
+    <p class="typing" id="typing"></p>
 
-  <div class="cta">
-    <a href="#projects">View Projects</a>
-    <a href="#contact" class="secondary">Contact Me</a>
+    <div class="cta">
+      <a href="#projects">View Projects</a>
+      <a href="#contact" class="secondary">Contact Me</a>
+    </div>
+
+    <div class="tech-stack">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>GitHub Pages</span>
+    </div>
+
+    <div class="scroll">↓ Scroll</div>
   </div>
-
-  <div class="scroll">↓ Scroll</div>
 </header>
 
 <section class="reveal">
   <h2>About Me</h2>
   <div class="card">
-    I’m a second-year BCA student focused on learning software development by building clean,
-    practical projects. I’m currently strengthening my foundations in programming and web technologies
-    to prepare for internships and entry-level roles.
+    I’m a BCA student focused on building practical software and web projects.
+    I’m strengthening my foundations to prepare for internships and entry-level roles.
   </div>
 </section>
 
@@ -269,28 +252,22 @@
   <div class="card">
     <span>C</span>
     <span>C++</span>
-    <span>Python (Basics)</span>
+    <span>Python</span>
     <span>HTML</span>
     <span>CSS</span>
     <span>JavaScript</span>
   </div>
 </section>
 
-<section class="reveal projects">
+<section class="reveal" id="projects">
   <h2>Projects</h2>
-
   <div class="card">
-    <strong>Personal Portfolio Website</strong>
-    <p>A responsive, modern portfolio built using HTML, CSS, and JavaScript.</p>
-  </div>
-
-  <div class="card">
-    <strong>Python Logic Programs</strong>
-    <p>Collection of beginner-friendly Python programs focusing on logic building.</p>
+    <strong>Personal Portfolio</strong>
+    <p>Modern responsive portfolio built using HTML, CSS & JavaScript.</p>
   </div>
 </section>
 
-<section class="reveal">
+<section class="reveal" id="contact">
   <h2>Contact</h2>
   <div class="card">
     <p>Email: krishchaurasia290@gmail.com</p>
@@ -303,58 +280,47 @@
 </footer>
 
 <script>
-  // Scroll reveal effect (used by professionals)
+  // Scroll reveal
   const reveals = document.querySelectorAll(".reveal");
-
   function revealOnScroll() {
-    const windowHeight = window.innerHeight;
+    const h = window.innerHeight;
     reveals.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 80) {
+      if (el.getBoundingClientRect().top < h - 80) {
         el.classList.add("active");
       }
     });
   }
-
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll();
 </script>
+
 <script>
+  // Typing effect
   const roles = [
     "BCA Student • Aspiring Software Developer",
     "Building real-world web projects",
-    "Learning JavaScript • HTML • CSS",
+    "Learning JavaScript, HTML & CSS",
     "Focused on internships & growth"
   ];
 
-  let i = 0;
-  let j = 0;
-  let current = "";
-  let deleting = false;
-  const speed = 80;
+  let i = 0, j = 0, del = false;
   const target = document.getElementById("typing");
 
   function type() {
     if (!target) return;
+    target.textContent = roles[i].slice(0, j);
 
-    if (!deleting && j <= roles[i].length) {
-      current = roles[i].slice(0, j++);
-    } else if (deleting && j >= 0) {
-      current = roles[i].slice(0, j--);
-    }
+    if (!del) j++; else j--;
 
-    target.textContent = current;
-
-    if (j === roles[i].length + 8) deleting = true;
-    if (deleting && j === 0) {
-      deleting = false;
+    if (j > roles[i].length + 6) del = true;
+    if (del && j === 0) {
+      del = false;
       i = (i + 1) % roles.length;
     }
-
-    setTimeout(type, deleting ? speed / 2 : speed);
+    setTimeout(type, del ? 40 : 80);
   }
-
   type();
 </script>
+
 </body>
-</html> 
+</html>
