@@ -1,48 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="KrhTW3AvmB9hcVIKfnqOxibjIvSJ8r04_u5fia-LPGg" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Satvik Chaurasia | Software Developer</title>
-
-  <meta name="description" content="Satvik Chaurasia portfolio — BCA student and aspiring software developer skilled in C, C++, Python, HTML, CSS, and JavaScript.">
-  <meta property="og:title" content="Satvik Chaurasia | Software Developer" />
-<meta property="og:description" content="BCA student & aspiring software developer building modern web projects." />
-<meta property="og:url" content="https://satvik077.github.io/portfolio-website/" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://satvik077.github.io/portfolio-website/preview.png" />
-
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://satvik077.github.io/portfolio-website/">
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #020617;
-      --card: rgba(255,255,255,0.08);
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --blur: blur(14px);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    
     body {
-      background: radial-gradient(circle at top, #1e293b, #020617);
-      color: var(--text);
+      background: linear-gradient(135deg, #020617, #1e293b);
+      color: #e5e7eb;
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     header {
@@ -53,191 +23,89 @@
       justify-content: center;
       text-align: center;
       padding: 2rem;
-      position: relative;
     }
 
-    .glow {
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      background: radial-gradient(circle, var(--accent), transparent 60%);
-      filter: blur(90px);
-      top: -100px;
-      opacity: 0.6;
-      animation: float 6s ease-in-out infinite;
-      z-index: -1;
-    }
-
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(20px); }
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 6vw, 3.4rem);
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .accent {
-      color: var(--accent);
-    }
-
-    .typing {
-      margin-top: 1rem;
-      font-size: 1.1rem;
-      color: var(--muted);
-      min-height: 1.5em;
-    }
-
-    .cta {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
+    h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+    .accent { color: #38bdf8; }
+    .typing { font-size: 1.1rem; color: #94a3b8; margin: 1rem 0; }
+    
+    .cta { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center; }
     .cta a {
-      padding: 0.7rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       border-radius: 999px;
       text-decoration: none;
-      font-size: 0.95rem;
       font-weight: 500;
-      background: var(--accent);
+      background: #38bdf8;
       color: #020617;
-      transition: 0.3s ease;
+      transition: 0.3s;
     }
+    .cta a:hover { transform: translateY(-3px); }
+    .cta .secondary { background: transparent; color: #e5e7eb; border: 1px solid rgba(255,255,255,0.2); }
 
-    .cta a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(56,189,248,0.4);
-    }
-
-    .cta .secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .scroll {
-      margin-top: 3rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      animation: bounce 1.8s infinite;
-    }
-
-    @keyframes bounce {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
-    }
-
-    section {
-      padding: 4rem 1.5rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
+    section { padding: 4rem 1.5rem; max-width: 1000px; margin: auto; }
+    h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+    
     .card {
-      background: var(--card);
-      backdrop-filter: var(--blur);
+      background: rgba(255,255,255,0.05);
       border-radius: 16px;
       padding: 1.5rem;
-      border: 1px solid rgba(255,255,255,0.08);
       margin-bottom: 1.5rem;
-      transition: 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
     }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    }
-
-    .skills span {
-      display: inline-block;
-      margin: 0.3rem;
-      padding: 0.4rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      font-size: 0.9rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Project Card Enhancements */
+    /* PROJECT CARDS - NEW STYLING */
     .project-card {
-      background: var(--card);
-      backdrop-filter: var(--blur);
+      background: rgba(255,255,255,0.05);
       border-radius: 16px;
       padding: 2rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 1.5rem;
-      transition: 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
     }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent), #8b5cf6);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover::before {
-      transform: scaleX(1);
-    }
-
+    
     .project-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 50px rgba(56, 189, 248, 0.2);
-      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 15px 40px rgba(56, 189, 248, 0.3);
+      border-color: #38bdf8;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
     }
 
     .project-card h3 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
+      color: #38bdf8;
       margin-bottom: 0.8rem;
-      color: var(--accent);
     }
 
     .project-card p {
-      color: var(--muted);
+      color: #94a3b8;
       margin-bottom: 1rem;
       line-height: 1.6;
     }
 
-    .project-tech {
+    .tech-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       margin: 1rem 0;
     }
 
-    .project-tech span {
-      display: inline-block;
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
+    .tech-stack span {
+      padding: 0.4rem 0.8rem;
       background: rgba(56, 189, 248, 0.15);
-      color: var(--accent);
+      color: #38bdf8;
+      border-radius: 999px;
       font-size: 0.85rem;
       font-weight: 500;
     }
@@ -250,106 +118,76 @@
     }
 
     .project-links a {
-      padding: 0.6rem 1.2rem;
+      padding: 0.7rem 1.3rem;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 0.9rem;
       font-weight: 500;
-      transition: 0.3s ease;
+      transition: 0.3s;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      font-size: 0.9rem;
     }
 
-    .btn-primary {
-      background: var(--accent);
+    .btn-live {
+      background: #38bdf8;
       color: #020617;
     }
 
-    .btn-primary:hover {
+    .btn-live:hover {
       background: #0ea5e9;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
     }
 
-    .btn-secondary {
+    .btn-code {
       background: transparent;
-      color: var(--text);
+      color: #e5e7eb;
       border: 1px solid rgba(255,255,255,0.2);
     }
 
-    .btn-secondary:hover {
+    .btn-code:hover {
       background: rgba(255,255,255,0.05);
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: #38bdf8;
+      color: #38bdf8;
     }
 
-    .project-badge {
+    .skills span {
       display: inline-block;
-      padding: 0.3rem 0.8rem;
+      margin: 0.3rem;
+      padding: 0.5rem 1rem;
       border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: white;
-      margin-bottom: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      font-size: 0.9rem;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      color: var(--muted);
+      color: #94a3b8;
       font-size: 0.9rem;
     }
 
     @media (max-width: 640px) {
-      .project-links {
-        flex-direction: column;
-      }
-      
-      .project-links a {
-        width: 100%;
-        justify-content: center;
-      }
+      h1 { font-size: 2rem; }
+      .project-links { flex-direction: column; }
+      .project-links a { width: 100%; justify-content: center; }
     }
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Satvik Chaurasia",
-  "url": "https://satvik077.github.io/portfolio-website/",
-  "jobTitle": "Aspiring Software Developer",
-  "description": "BCA student and aspiring software developer skilled in HTML, CSS, JavaScript, C, C++, and Python.",
-  "sameAs": [
-    "https://www.linkedin.com/in/satvik-chaurasia-b280922bb",
-    "https://github.com/Satvik077"
-  ]
-}
-  </script>
 </head>
 
 <body>
 
 <header>
-  <div class="glow"></div>
-
-  <h1>
-    Hi, I'm <span class="accent">Satvik</span><br>
-    <span class="accent">Chaurasia</span>
-  </h1>
-
+  <h1>Hi, I'm <span class="accent">Satvik Chaurasia</span></h1>
   <p class="typing" id="typing"></p>
-
   <div class="cta">
     <a href="#projects">View Projects</a>
     <a href="#contact" class="secondary">Contact Me</a>
   </div>
-
-  <div class="scroll">↓ Scroll</div>
 </header>
 
-<section class="reveal">
+<section>
   <h2>About Me</h2>
   <div class="card">
     I'm a BCA student focused on building strong programming fundamentals and modern web projects.
@@ -357,7 +195,7 @@
   </div>
 </section>
 
-<section class="reveal skills">
+<section class="skills">
   <h2>Skills</h2>
   <div class="card">
     <span>C</span>
@@ -368,111 +206,95 @@
     <span>JavaScript</span>
     <span>Chart.js</span>
     <span>Tailwind CSS</span>
-    <span>Git</span>
   </div>
 </section>
 
-<section class="reveal" id="projects">
+<section id="projects">
   <h2>Featured Projects</h2>
 
-  <!-- Sales Analytics Dashboard - NEW PROJECT -->
+  <!-- SALES DASHBOARD - NEW! -->
   <div class="project-card">
-    <span class="project-badge">✨ LATEST PROJECT</span>
+    <span class="badge">✨ LATEST PROJECT</span>
     <h3>📊 Sales Analytics Dashboard</h3>
     <p>
       Professional real-time analytics dashboard featuring interactive charts, data visualization, 
       search functionality, and fully responsive design. Built to showcase business intelligence 
       capabilities with modern web technologies.
     </p>
-    <div class="project-tech">
+    <div class="tech-stack">
       <span>HTML5</span>
       <span>CSS3</span>
       <span>JavaScript</span>
       <span>Chart.js</span>
       <span>Tailwind CSS</span>
     </div>
-    <p style="color: var(--muted); font-size: 0.9rem; margin-top: 1rem;">
-      <strong>Key Features:</strong> Interactive line/bar/pie charts • Real-time data updates • 
-      Order tracking system • Search & filter functionality • Dark mode UI • Mobile responsive
+    <p style="font-size: 0.9rem; margin-top: 1rem;">
+      <strong style="color: #38bdf8;">Features:</strong> Interactive charts • Real-time updates • 
+      Search & filter • Dark mode • Mobile responsive
     </p>
     <div class="project-links">
-      <a href="https://satvik077.github.io/sales-dashboard/" target="_blank" class="btn-primary">
+      <a href="https://satvik077.github.io/sales-dashboard/" target="_blank" class="btn-live">
         🔗 Live Demo
       </a>
-      <a href="https://github.com/Satvik077/sales-dashboard" target="_blank" class="btn-secondary">
+      <a href="https://github.com/Satvik077/sales-dashboard" target="_blank" class="btn-code">
         💻 View Code
       </a>
     </div>
   </div>
 
-  <!-- Personal Portfolio -->
+  <!-- PORTFOLIO WEBSITE -->
   <div class="project-card">
     <h3>🎨 Personal Portfolio Website</h3>
     <p>Modern, responsive portfolio showcasing my journey as a developer with smooth animations and clean design.</p>
-    <div class="project-tech">
+    <div class="tech-stack">
       <span>HTML</span>
       <span>CSS</span>
       <span>JavaScript</span>
     </div>
     <div class="project-links">
-      <a href="https://satvik077.github.io/portfolio-website/" target="_blank" class="btn-primary">
+      <a href="https://satvik077.github.io/portfolio-website/" target="_blank" class="btn-live">
         🔗 Live Demo
       </a>
-      <a href="https://github.com/Satvik077/portfolio-website" target="_blank" class="btn-secondary">
+      <a href="https://github.com/Satvik077/portfolio-website" target="_blank" class="btn-code">
         💻 View Code
       </a>
     </div>
   </div>
 
-  <!-- Python Projects -->
+  <!-- PYTHON PROJECTS -->
   <div class="project-card">
     <h3>🐍 Python Logic Programs</h3>
     <p>Collection of beginner-friendly programs designed to strengthen logical thinking and problem-solving skills.</p>
-    <div class="project-tech">
+    <div class="tech-stack">
       <span>Python</span>
       <span>Algorithms</span>
-      <span>Data Structures</span>
     </div>
     <div class="project-links">
-      <a href="https://github.com/Satvik077" target="_blank" class="btn-secondary">
+      <a href="https://github.com/Satvik077" target="_blank" class="btn-code">
         💻 View on GitHub
       </a>
     </div>
   </div>
 </section>
 
-<section class="reveal" id="contact">
-  <h2>Get In Touch</h2>
+<section id="contact">
+  <h2>Contact</h2>
   <div class="card">
-    <p style="margin-bottom: 0.8rem;">📧 <strong>Email:</strong> <a href="mailto:krishchaurasia290@gmail.com" style="color: var(--accent); text-decoration: none;">krishchaurasia290@gmail.com</a></p>
-    <p style="margin-bottom: 0.8rem;">💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/satvik-chaurasia-b280922bb" target="_blank" style="color: var(--accent); text-decoration: none;">linkedin.com/in/satvik-chaurasia-b280922bb</a></p>
-    <p>💻 <strong>GitHub:</strong> <a href="https://github.com/Satvik077" target="_blank" style="color: var(--accent); text-decoration: none;">github.com/Satvik077</a></p>
+    <p>📧 Email: krishchaurasia290@gmail.com</p>
+    <p>💼 LinkedIn: <a href="https://linkedin.com/in/satvik-chaurasia-b280922bb" target="_blank" style="color: #38bdf8;">linkedin.com/in/satvik-chaurasia-b280922bb</a></p>
+    <p>💻 GitHub: <a href="https://github.com/Satvik077" target="_blank" style="color: #38bdf8;">github.com/Satvik077</a></p>
   </div>
 </section>
 
 <footer>
-  © 2026 Satvik Chaurasia • Built with 💙 and lots of ☕
+  © 2026 Satvik Chaurasia
 </footer>
-
-<script>
-  const reveals = document.querySelectorAll(".reveal");
-  function revealOnScroll() {
-    const h = window.innerHeight;
-    reveals.forEach(el => {
-      if (el.getBoundingClientRect().top < h - 80) {
-        el.classList.add("active");
-      }
-    });
-  }
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
-</script>
 
 <script>
   const roles = [
     "BCA Student • Aspiring Software Developer",
     "Building real-world web projects",
-    "Creating interactive dashboards & web apps",
+    "Creating dashboards & web apps",
     "Focused on internships & growth"
   ];
 
@@ -482,7 +304,6 @@
 
   function type() {
     if (!target) return;
-
     if (!deleting) {
       target.textContent = roles[i].slice(0, ++j);
       if (j === roles[i].length + 8) deleting = true;
